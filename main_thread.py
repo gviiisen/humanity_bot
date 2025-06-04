@@ -14,6 +14,8 @@ from utils.JWT_utils import is_token_expired, can_claim
 from API import HumanityBotAPI
 from database import AccountDatabase
 
+from config import concurrent_number
+
 # 获取 exe 文件所在的目录
 if getattr(sys, 'frozen', False):
     script_dir = os.path.dirname(sys.executable)
@@ -110,7 +112,7 @@ if __name__ == '__main__':
     SUCCESS_PATH = os.path.join(script_dir, 'data', f'success_{start_time}.txt')
     FAIL_PATH = os.path.join(script_dir, 'data', f'fail_{start_time}.txt')
 
-    pool_size = 3
+    pool_size = concurrent_number
     # 创建线程池，并发大小为3
     with concurrent.futures.ThreadPoolExecutor(max_workers=pool_size) as executor:
         # 使用列表推导式创建并提交1000个任务到线程池
