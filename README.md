@@ -63,7 +63,7 @@ concurrent_number = 3
 
 ## 主要文件说明
 
-- `main.py` - 主程序入口
+- `main.py` - 旧版本github开源代码主程序入口
 - `main_thread.py` - 多线程批量处理
 - `API.py` - Humanity Protocol API接口
 - `database.py` - 数据库操作
